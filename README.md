@@ -1,3 +1,3 @@
-# AppSkeleton
+# Drink Selector
 
-This is a skeleton that I like to use to pump out quick and simple applications.  This way most of the formatting is already done.
+I never seem to know what to order at a bar, so I generally just get a Rum and Coke due to lack of creativity.  Enter the DrinkSelector!

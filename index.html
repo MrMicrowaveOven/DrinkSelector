@@ -5,8 +5,9 @@
     <title>Drink Selector!</title>
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="favicon.png" rel="shortcut icon" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script/drinkList.js" type="text/javascript"></script>
     <script src="script/drinks.js" type="text/javascript"></script>
   </head>
   <body>
@@ -15,7 +16,9 @@
     </div>
     <div class="application">
       <br>
-      <label><input type="checkbox" id="low-carb">Low Carb</label>
+      <label>
+        <input type="checkbox" id="low-carb">
+       Low Carb</label>
 
       <button class="button inheritFont" onclick="generateDrink()">Make me a drink!</button>
       <div class="response" id="response"></div>

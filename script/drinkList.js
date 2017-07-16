@@ -245,7 +245,7 @@ const DRINKS = [
         "ingredient": "Apricot brandy" },
       { "unit": "cl",
         "amount": 3,
-        "ingredient": "Calvados" }
+        "ingredient": "" }
     ],
     "preparation": "Shake with ice cubes. Strain into a cocktail glass." },
   { "name": "Mimosa",

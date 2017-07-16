@@ -12,19 +12,30 @@ DRINKS_LIST.forEach(function(drink) {
     }
   });
 });
-// console.log(Object.keys(ingredientsList).length);
-// Object.keys(ingredientsList).sort().forEach(function(ingredient) {
-//   console.log(ingredient);
-// });
 
 function generateDrink() {
-  var drinks;
-  drinks = DRINKS_LIST;
+  var drinks = DRINKS_LIST;
+  var includeInList;
+  var ingredients;
+  var ingredientRules = [];
+  var requireOrExclude;
+  $(".ingredients").each(function(index, ingredient) {
+    var exclude = $(".requireOrExclude")[index].value === "exclude";
+    drinks = drinks.filter(function(drink) {
+      ingredients = drink.ingredients.map(function(ingredientSpecs) {
+        return ingredientSpecs.ingredient;
+      });
+      if ((ingredients.indexOf(ingredient.value) === -1 && exclude) || (ingredients.indexOf(ingredient.value) > -1 && !exclude)) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  });
   var drink = drinks[Math.floor(Math.random()*drinks.length)];
   $("#response").html("");
   $("#response").append("<div id='drinkName'>" + drink.name + "<div>");
   if (drink.ingredients.length > 0) {
-    // $("#response").append("<div>" + "Ingredients:" + "<div>");
     drink.ingredients.forEach(function(ingredient) {
       if (ingredient.ingredient) {
         $("#response").append("<div>" + ingredient.ingredient + "<div>");

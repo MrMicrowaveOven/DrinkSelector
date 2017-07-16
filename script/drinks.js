@@ -32,6 +32,22 @@ function generateDrink() {
       }
     });
   });
+  var drinkDisplay = {};
+  var drinkInfo = {};
+  var ingredients = [];
+  drinks.forEach(function(drink) {
+    drinkInfo = {};
+    ingredients = [];
+    drink.ingredients.forEach(function(ingredientSpec) {
+      if (ingredientSpec.ingredient) {
+        ingredients.push(ingredientSpec.ingredient);
+      } else {
+        ingredients.push(ingredientSpec.special);
+      }
+    });
+    drinkDisplay[drink.name] = ingredients;
+  });
+  console.log({"All possible drinks:": drinkDisplay});
   var drink = drinks[Math.floor(Math.random()*drinks.length)];
   $("#response").html("");
   if (!drink) {

@@ -22,7 +22,6 @@ function addOption() {
 
 function addDeleteOptionListeners() {
   $(".xButton").on("click", function(e) {
-    console.log(e.target.parentElement);
     e.target.parentElement.remove();
   });
 }

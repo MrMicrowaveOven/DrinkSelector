@@ -1,5 +1,9 @@
 var DRINKS_LIST = DRINKS;
 
+$(function() {
+	FastClick.attach(document.body);
+});
+
 var ingredientsList = {};
 DRINKS_LIST.forEach(function(drink) {
   var ingredientName;

@@ -1,7 +1,7 @@
 {
   "name": "whatpage",
   "version": "1.0.0",
-  "description": "",
+  "description": "I never seem to know what to order at a bar, so I generally just get a Rum and Coke due to lack of creativity.  Enter the DrinkSelector, with its ability to generate a drink with a touch of a button!",
   "main": "response.js",
   "scripts": {
     "test": "mocha"
@@ -10,6 +10,16 @@
   "license": "ISC",
   "dependencies": {
     "chai": "^3.5.0",
+    "fastclick": "^1.0.6",
     "mocha": "^3.2.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrMicrowaveOven/DrinkSelector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MrMicrowaveOven/DrinkSelector/issues"
+  },
+  "homepage": "https://github.com/MrMicrowaveOven/DrinkSelector#readme"
 }

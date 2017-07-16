@@ -34,6 +34,10 @@ function generateDrink() {
   });
   var drink = drinks[Math.floor(Math.random()*drinks.length)];
   $("#response").html("");
+  if (!drink) {
+    $("#response").html("Sorry, I don't have any drinks for you that follow those standards.");
+    return;
+  }
   $("#response").append("<div id='drinkName'>" + drink.name + "<div>");
   if (drink.ingredients.length > 0) {
     drink.ingredients.forEach(function(ingredient) {

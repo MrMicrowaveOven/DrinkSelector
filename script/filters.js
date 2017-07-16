@@ -13,7 +13,7 @@ function addOption() {
   );
   ingredientsList.forEach(function(ingredient) {
     $(".ingredients").append(
-      "<option value=" + ingredient + ">" + ingredient + "</option>"
+      "<option value='" + ingredient + "'>" + ingredient + "</option>"
     );
   });
 }

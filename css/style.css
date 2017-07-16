@@ -3,6 +3,14 @@
   font-weight: bolder;
 }
 
+.xButton {
+  width: 15px;
+}
+
+.xButton:hover {
+  cursor: pointer;
+}
+
 #addOption {
   color: #00b3ff;
   font-size: medium;

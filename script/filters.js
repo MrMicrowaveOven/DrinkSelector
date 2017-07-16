@@ -8,12 +8,21 @@ function addOption() {
       + "<option value='require'>Require</option>"
     + "</select> : "
     + "<select class='dropdown ingredients'>"
-    + "</select><br>"
+    + "</select>"
+    + " <img class='xButton' src='xButton.png'>"
     + "<div>"
   );
   ingredientsList.forEach(function(ingredient) {
     $(".ingredients").append(
       "<option value='" + ingredient + "'>" + ingredient + "</option>"
     );
+  });
+  addDeleteOptionListeners();
+}
+
+function addDeleteOptionListeners() {
+  $(".xButton").on("click", function(e) {
+    console.log(e.target.parentElement);
+    e.target.parentElement.remove();
   });
 }

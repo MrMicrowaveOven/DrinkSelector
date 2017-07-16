@@ -13,7 +13,7 @@ DRINKS_LIST.forEach(function(drink) {
   });
 });
 // console.log(Object.keys(ingredientsList).length);
-// Object.keys(ingredientsList).forEach(function(ingredient) {
+// Object.keys(ingredientsList).sort().forEach(function(ingredient) {
 //   console.log(ingredient);
 // });
 

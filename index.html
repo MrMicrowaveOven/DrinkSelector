@@ -9,6 +9,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script/drinkList.js" type="text/javascript"></script>
     <script src="script/drinks.js" type="text/javascript"></script>
+    <script src="script/ingredientList.js" type="text/javascript"></script>
+    <script src="script/filters.js" type="text/javascript"></script>
+
+    </script>
   </head>
   <body>
     <div class="description">
@@ -16,9 +20,13 @@
     </div>
     <div class="application">
       <br>
-      <label>
+      <div class="options">
+        
+      </div>
+      <a id="addOption" onclick="addOption()">More options</a>
+      <!-- <label>
         <input type="checkbox" id="low-carb">
-       Low Carb</label>
+       Low Carb</label> -->
 
       <button class="button inheritFont" id="generateDrink">Make me a drink!</button>
       <div class="response" id="response"></div>

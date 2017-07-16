@@ -3,6 +3,16 @@
   font-weight: bolder;
 }
 
+#addOption {
+  color: #00b3ff;
+  font-size: medium;
+  text-decoration: underline;
+}
+
+#addOption:hover, #generateDrink:hover {
+  cursor: pointer;
+}
+
 body {
   position: relative;
   font-size: x-large;

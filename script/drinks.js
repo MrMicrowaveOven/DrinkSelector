@@ -1,4 +1,4 @@
-var DRINKS;
+// var DRINKS;
 
 function generateDrink() {
   var drinks;

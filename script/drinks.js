@@ -1,9 +1,5 @@
 var DRINKS_LIST = DRINKS;
 
-$(function() {
-	FastClick.attach(document.body);
-});
-
 var ingredientsList = {};
 DRINKS_LIST.forEach(function(drink) {
   var ingredientName;
@@ -82,5 +78,5 @@ function selectLowCarb() {
 }
 
 $(document).ready(function() {
-  $('#generateDrink').on('click touchstart', generateDrink);
+  $('#generateDrink').on('click', generateDrink);
 });

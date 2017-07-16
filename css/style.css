@@ -1,3 +1,8 @@
+#drinkName {
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
 body {
   position: relative;
   font-size: x-large;

@@ -4,7 +4,16 @@ function generateDrink() {
   var drinks;
   drinks = $("#low-carb")[0].checked ? selectLowCarb() : DRINKS_LIST;
   var drink = drinks[Math.floor(Math.random()*drinks.length)];
-  $("#response").html(drink.name);
+  $("#response").html("");
+  $("#response").append("<div id='drinkName'>" + drink.name + "<div>");
+  if (drink.ingredients.length > 0) {
+    $("#response").append("<div>" + "Ingredients:" + "<div>");
+    drink.ingredients.forEach(function(ingredient) {
+      if (ingredient.ingredient) {
+        $("#response").append("<div>" + ingredient.ingredient + "<div>");
+      }
+    });
+  }
 }
 
 function selectLowCarb() {

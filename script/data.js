@@ -54,8 +54,8 @@ DRINKLIST.forEach(function(drink) {
   });
 
 });
-console.log(glasses);
-console.log(categories);
-console.log(units);
-console.log(amounts);
-console.log(ingredients);
+// console.log(glasses);
+// console.log(categories);
+// console.log(units);
+// console.log(amounts);
+// console.log(ingredients);

@@ -11,8 +11,8 @@ function addIngredientField() {
     '<div class="vex-custom-field-wrapper ingredientDropdown" id="' + idName + '"">' +
       '<div class="vex-custom-input-wrapper">' +
         '<img class="xButton xButtonRemoveField"  id="xButtonRemoveField' + ingredientId + '" src="xButton.png" onclick="removeIngredientField(' + ingredientId + ')">' +
-        '<select name="ingredient' + ingredientId + '">' +
-          '<option>Add ingredient</option>' +
+        '<select name="ingredient' + ingredientId + '" required>' +
+          '<option value="">Add ingredient</option>' +
           ingredientsSelectString +
         '</select>' +
       '</div>' +
@@ -65,7 +65,7 @@ function openDrinkForm() {
               '<label>Ingredients',
                 '<div class="vex-custom-input-wrapper">',
                   '<select name="ingredient1" required>',
-                    '<option>Add ingredient</option>',
+                    '<option value="">Add ingredient</option>',
                     ingredientsSelectString,
                   '</select>',
                 '</div>',

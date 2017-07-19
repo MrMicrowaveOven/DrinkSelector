@@ -1,6 +1,4 @@
 function addIngredientField() {
-  // console.log("hello");
-  // console.log($(".ingredientDropdown").length);
   var ingredientToAppend = $(".ingredientDropdown").length;
   var ingredientId = ingredientToAppend + 1;
   var idName = "ingredientDropdown" + ingredientId;
@@ -10,20 +8,32 @@ function addIngredientField() {
     ingredientsSelectString += '<option value="' + ingredient + '">' + ingredient + '</option>';
   });
   $("#ingredientDropdown" + ingredientToAppend).after(
-    '<div class="vex-custom-field-wrapper class="ingredientDropdown" id="' + idName + '"">' +
-        '<div class="vex-custom-input-wrapper">' +
-          '<img class="xButton" src="xButton.png" onclick="removeIngredientField(' + ingredientId + ')">' +
-          '<select name="ingredient' + ingredientId + '">' +
-            '<option>Add ingredient</option>' +
-            ingredientsSelectString +
-          '</select>' +
-        '</div>' +
-      '</div>'
-    );
+    '<div class="vex-custom-field-wrapper ingredientDropdown" id="' + idName + '"">' +
+      '<div class="vex-custom-input-wrapper">' +
+        '<img class="xButton xButtonRemoveField"  id="xButtonRemoveField' + ingredientId + '" src="xButton.png" onclick="removeIngredientField(' + ingredientId + ')">' +
+        '<select name="ingredient' + ingredientId + '">' +
+          '<option>Add ingredient</option>' +
+          ingredientsSelectString +
+        '</select>' +
+      '</div>' +
+    '</div>'
+  );
 }
 
 function removeIngredientField(ingredientId) {
   $("#ingredientDropdown" + ingredientId).remove();
+
+  $(".ingredientDropdown").each(function(index, element) {
+    var newDropdownId = index + 1;
+    var jqElement = $(element);
+    jqElement.attr("id", "ingredientDropdown" + newDropdownId);
+  });
+
+  $(".xButtonRemoveField").each(function(index, element) {
+    var newButtonId = index + 2;
+    var jqElement = $(element);
+    jqElement.attr("onclick", "removeIngredientField(" + newButtonId + ")");
+  });
 }
 
 function openDrinkForm() {
@@ -47,10 +57,21 @@ function openDrinkForm() {
           '<div class="vex-custom-field-wrapper">',
               '<label>Name of Drink',
                 '<div class="vex-custom-input-wrapper">',
-                    '<input name="drinkName" type="text"/>',
+                    '<input name="drinkName" type="text" required/>',
                 '</div>',
               '</label>',
           '</div>',
+          '<div class="vex-custom-field-wrapper ingredientDropdown" id="ingredientDropdown1">' +
+              '<label>Ingredients',
+                '<div class="vex-custom-input-wrapper">',
+                  '<select name="ingredient1" required>',
+                    '<option>Add ingredient</option>',
+                    ingredientsSelectString,
+                  '</select>',
+                '</div>',
+              '</label>',
+          '</div>',
+          '<a id="addAnotherIngredientLink" style="color: blue; text-decoration: underline;" onclick="addIngredientField()">Add another ingredient</a>',
           // '<div class="vex-custom-field-wrapper">',
           //     '<label>Glass',
           //       '<div class="vex-custom-input-wrapper">',
@@ -83,33 +104,14 @@ function openDrinkForm() {
           //       '</div>',
           //     '</label>',
           // '</div>',
-          '<div class="vex-custom-field-wrapper">' +
-              '<label>Ingredients',
-                '<div class="vex-custom-input-wrapper">',
-                  '<select name="ingredient1" class="ingredientDropdown" id="ingredientDropdown1">',
-                    '<option>Add ingredient</option>',
-                    ingredientsSelectString,
-                  '</select>',
-                '</div>',
-              '</label>',
-              '<br><a id="addAnotherIngredientLink" style="color: blue; text-decoration: underline;" onclick="addIngredientField()">Add another ingredient</a>',
-          '</div>',
-          // '<button>Add Another Ingredient</button>'
       ].join(''),
       callback: function (data) {
-          if (!data) {
-              return console.log('Cancelled');
-          }
-          else {
-            console.log(data);
-          }
-          // $('.demo-result-custom-vex-dialog').show().html([
-          //     '<h4>Result</h4>',
-          //     '<p>',
-          //         'Date: <b>' + data.date + '</b><br/>',
-          //         'Color: <input type="color" value="' + data.color + '" readonly />',
-          //     '</p>'
-          // ].join(''))
+        if (!data) {
+          return console.log('Cancelled');
+        }
+        else {
+          console.log(data);
+        }
       }
   });
 }

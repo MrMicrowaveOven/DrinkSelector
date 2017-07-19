@@ -56,6 +56,7 @@ DRINKLIST.forEach(function(drink) {
 });
 // console.log(glasses);
 // console.log(categories);
+console.log(garnishes);
 // console.log(units);
 // console.log(amounts);
 // console.log(ingredients);

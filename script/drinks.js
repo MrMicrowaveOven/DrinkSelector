@@ -79,4 +79,6 @@ function selectLowCarb() {
 
 $(document).ready(function() {
   $('#generateDrink').on('click', generateDrink);
+  // $('#openDrinkFormButton').on('click', openDrinkForm);
+  openDrinkForm();
 });

@@ -111,6 +111,34 @@ function openDrinkForm() {
         }
         else {
           console.log(data);
+          var drinkObject = {
+            name: data.drinkName,
+            ingredients: []
+          };
+          var i = 1;
+          while (data["ingredient" + i]) {
+            drinkObject.ingredients.push(data["ingredient" + i]);
+            i += 1;
+          }
+          var request = {
+            drink: drinkObject
+          };
+
+          $.ajax({
+            type: "POST",
+            url: "http://www.drink-selector-api.herokuapp.com/drinks",
+            data: request,
+            dataType: "json",
+            contentType: "application/json",
+            success: function (res) {
+                console.log(res);
+            },
+            error: function (xhr, status, error) {
+              console.log(xhr);
+              console.log(status);
+              console.log(error);
+            }
+          });
         }
       }
   });

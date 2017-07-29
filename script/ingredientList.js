@@ -4,7 +4,6 @@ const INGREDIENTS = [
   "Apricot brandy",
   "Blackberry liqueur",
   "Cachaca",
-  "Calvados",
   "Campari",
   "Champagne",
   "Cherry liqueur",
@@ -50,5 +49,5 @@ const INGREDIENTS = [
   "Vermouth",
   "Vodka",
   "Whiskey",
-  "White rum ",
+  "White rum",
 ];

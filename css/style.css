@@ -45,8 +45,15 @@ body {
 }
 
 html {
-  background-image: url("../background.png");
-  background-size: 1700px
+  /*background-image: url("../background.png");
+  background-size: 1700px*/
+  background: url("../background.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
 }
 
 #portfolioLinks {
